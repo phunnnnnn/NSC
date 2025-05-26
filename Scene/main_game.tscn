@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://c58wd8dr3sv6r"]
+
+[ext_resource type="Script" uid="uid://dx7frn1dhiqvo" path="res://Scene/pot.gd" id="1_1btii"]
+[ext_resource type="Texture2D" uid="uid://c0uemnur12u66" path="res://pot.png" id="1_vh4eo"]
+[ext_resource type="Script" uid="uid://c0mcaowvyjus3" path="res://Scene/seed_bag.gd" id="2_1btii"]
+[ext_resource type="Texture2D" uid="uid://8micddt6ohn8" path="res://seedBag.png" id="2_htkpn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1btii"]
+size = Vector2(202, 189.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44mwd"]
+size = Vector2(210, 197)
+
+[node name="mainGame" type="Node2D"]
+
+[node name="pot" type="Area2D" parent="."]
+script = ExtResource("1_1btii")
+
+[node name="texturePot" type="Sprite2D" parent="pot"]
+position = Vector2(288, 510)
+scale = Vector2(0.22, 0.209)
+texture = ExtResource("1_vh4eo")
+
+[node name="hitbox" type="CollisionShape2D" parent="pot"]
+position = Vector2(285, 514.5)
+shape = SubResource("RectangleShape2D_1btii")
+
+[node name="button" type="TextureButton" parent="pot"]
+offset_left = 184.0
+offset_top = 418.0
+offset_right = 382.0
+offset_bottom = 611.0
+
+[node name="seedBag" type="Area2D" parent="."]
+script = ExtResource("2_1btii")
+
+[node name="textureSeedBag" type="Sprite2D" parent="seedBag"]
+position = Vector2(659, 514)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("2_htkpn")
+
+[node name="hitbox" type="CollisionShape2D" parent="seedBag"]
+position = Vector2(667, 506.5)
+shape = SubResource("RectangleShape2D_44mwd")
+
+[node name="button" type="TextureButton" parent="seedBag"]
+offset_left = 559.0
+offset_top = 405.0
+offset_right = 776.0
+offset_bottom = 608.0
+
+[connection signal="area_entered" from="pot" to="pot" method="_on_area_entered"]
+[connection signal="button_up" from="pot/button" to="pot" method="_on_button_button_up"]
+[connection signal="area_entered" from="seedBag" to="seedBag" method="_on_area_entered"]
+[connection signal="area_exited" from="seedBag" to="seedBag" method="_on_area_exited"]
+[connection signal="mouse_entered" from="seedBag" to="seedBag" method="_on_mouse_entered"]
+[connection signal="plant_event" from="seedBag" to="pot" method="_on_seed_bag_plant_event"]
+[connection signal="button_down" from="seedBag/button" to="seedBag" method="_on_button_button_down"]
+[connection signal="button_up" from="seedBag/button" to="seedBag" method="_on_button_button_up"]
+[connection signal="mouse_entered" from="seedBag/button" to="seedBag" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="seedBag/button" to="seedBag" method="_on_button_mouse_exited"]

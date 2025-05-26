@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="NSC"
-run/main_scene="uid://f2q6jrqfukwf"
+run/main_scene="uid://c58wd8dr3sv6r"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globle="*res://Script/globle.gd"
 
 [rendering]
 
