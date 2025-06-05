@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://ie0bfgy022ym"]
+
+[ext_resource type="Texture2D" uid="uid://8micddt6ohn8" path="res://texture/seedBag.png" id="1_324gt"]
+[ext_resource type="Script" uid="uid://hjklothg6ojw" path="res://script/mainGameScript.gd" id="1_xr5k3"]
+[ext_resource type="Script" uid="uid://b6cbci3c0awtv" path="res://script/grid_slotScript.gd" id="2_imd3a"]
+[ext_resource type="Script" uid="uid://b8homu2576ngh" path="res://script/planterScript.gd" id="3_imd3a"]
+[ext_resource type="Texture2D" uid="uid://c0uemnur12u66" path="res://texture/pot.png" id="4_gscx4"]
+[ext_resource type="Script" uid="uid://cqrub8d05t17u" path="res://script/seedBagScript.gd" id="4_imd3a"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xr5k3")
+
+[node name="gardenGrid" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 103.0
+offset_right = 865.0
+offset_bottom = 421.0
+columns = 5
+
+[node name="gridSlot1" type="Panel" parent="gardenGrid"]
+layout_mode = 2
+script = ExtResource("2_imd3a")
+
+[node name="planter" type="Control" parent="gardenGrid/gridSlot1"]
+anchors_preset = 0
+offset_right = 50.0
+offset_bottom = 50.0
+script = ExtResource("3_imd3a")
+
+[node name="Pot" type="Sprite2D" parent="gardenGrid/gridSlot1/planter"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_gscx4")
+
+[node name="itemBar" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 509.0
+offset_right = 898.0
+offset_bottom = 626.0
+
+[node name="seedBag" type="TextureRect" parent="itemBar"]
+layout_mode = 2
+script = ExtResource("4_imd3a")
+
+[node name="seedBagIcon" type="Sprite2D" parent="itemBar/seedBag"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_324gt")
+
+[node name="nextDayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 967.0
+offset_top = 518.0
+offset_right = 1119.0
+offset_bottom = 612.0
+
+[node name="calendar" type="Label" parent="."]
+layout_mode = 0
+offset_right = 173.0
+offset_bottom = 82.0
+text = "Day 0"
