@@ -6,6 +6,8 @@ extends Control
 
 var current_day = 1
 
+var taget = "none"
+
 func _ready() :
 	day_Lable.text = "Day %d" % current_day
 	next_Day_Button.pressed.connect(_on_next_day)
@@ -15,3 +17,8 @@ func _on_next_day() :
 	day_Lable.text = "Day %d" % current_day
 #	for planter in garden_Grid.get_children():
 #		planter.grow()
+
+
+
+func _getpot () :
+	pass
