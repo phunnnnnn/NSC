@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvqr0ci344004"]
+
+[ext_resource type="Texture2D" uid="uid://coe506ij0bcg7" path="res://icon.svg" id="1_4n5h1"]
+[ext_resource type="Script" uid="uid://c1mm8hjgng0f" path="res://UI scene/POP UP THING.gd" id="1_aiert"]
+
+[node name="POP UP THING" type="Control"]
+layout_mode = 3
+anchor_right = 0.045
+anchor_bottom = 0.08
+offset_right = 0.159996
+offset_bottom = 0.159996
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aiert")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 52.0
+offset_bottom = 52.0
+texture = ExtResource("1_4n5h1")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 55.0
+offset_top = 1.0
+offset_right = 121.0
+offset_bottom = 24.0
+text = "MY TEXT"
