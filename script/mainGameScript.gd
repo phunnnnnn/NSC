@@ -4,6 +4,8 @@ extends Control
 @onready var day_Lable = $calendar
 @onready var next_Day_Button = $nextDayButton
 
+
+
 var current_day = 1
 
 var taget = "none"
@@ -20,5 +22,10 @@ func _on_next_day() :
 
 
 
-func _getpot () :
-	pass
+func getpot () :
+	print("GET IT")
+
+
+func _on_pot_pick_uppot() -> void:
+	getpot()
+	print("j")

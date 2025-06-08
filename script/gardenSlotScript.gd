@@ -1,9 +1,9 @@
 extends Panel
 
 @onready var gardenslot = $"."
-@onready var text = $Label
+@onready var text = $text
 
-# กำหนดสีปกติ และสีเมื่อ hover
+# กำหนดสีปกติ และสีเมื่อ hover 
 var normal_color = Color("2c2c2c")     # เทาเข้ม
 var hover_color = Color("4444aa")     # น้ำเงินอ่อน
 
