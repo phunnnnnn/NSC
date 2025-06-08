@@ -14,11 +14,9 @@ func _ready():
 
 func _on_mouse_entered():
 	text.text = "POT"
-	pass
 
 func _on_mouse_exited():
 	text.text = "pot"
-	pass
 
 func press():
 	print("yes")
