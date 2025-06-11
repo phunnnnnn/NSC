@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0pb1ve04u2pp"]
+
+[ext_resource type="Script" uid="uid://bj4a0s1wmvv1p" path="res://scripts/potScript.gd" id="1_n1183"]
+[ext_resource type="Texture2D" uid="uid://31fto0qo2doe" path="res://pot_project01.png" id="1_xu6wc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n1183"]
+font_size = 60
+
+[node name="pot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n1183")
+
+[node name="Panel" type="Panel" parent="."]
+z_index = -5
+layout_mode = 0
+offset_top = 1.0
+offset_right = 500.0
+offset_bottom = 501.0
+scale = Vector2(0.4, 0.4)
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 500.0
+texture = ExtResource("1_xu6wc")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(-500, 0)
+text = "pootai"
+label_settings = SubResource("LabelSettings_n1183")
