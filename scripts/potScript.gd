@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 
 func _on_mouse_entered() :
 	mouseFocus = true
-	description.visible = true
+	description.visible = true 
 
 func _on_mouse_exited() :
 	mouseFocus = false
