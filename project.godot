@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="NSC"
-run/main_scene="res://scenes/pot.tscn"
+run/main_scene="uid://utaq3l4qmsmt"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
